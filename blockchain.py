@@ -32,3 +32,10 @@ genesis = GenesisBlock()
 print("🔓 AfriCryptChain Genesis Block Created:")
 print(f"Hash: {genesis.hash}")
 print(f"Block Data: {genesis.data}")
+
+def proof_of_work(block, difficulty=4):
+    prefix = "0" * difficulty
+    while not block.calculate_hash().startswith(prefix):
+        block.nonce += 1
+        block.hash = block.calculate_hash()
+    return block
