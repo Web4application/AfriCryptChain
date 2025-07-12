@@ -48,3 +48,13 @@ def proof_of_work(block, difficulty=4):
         block.nonce += 1
         block.hash = block.calculate_hash()
     return block
+def robust_sync(peer):
+    for attempt in range(5):
+        try:
+            res = requests.get(f"http://{peer}/chain", timeout=3)
+            if res.status_code == 200:
+                update_chain(res.json())
+                return True
+        except:
+            time.sleep(2 ** attempt)
+    return False
