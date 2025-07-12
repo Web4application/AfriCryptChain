@@ -1,6 +1,5 @@
 CONTENTS OF THIS FILE
 ---------------------
-
 * Introduction
 * Prerequisites
 * Building the Library
