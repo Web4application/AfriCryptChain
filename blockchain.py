@@ -58,3 +58,14 @@ def robust_sync(peer):
         except:
             time.sleep(2 ** attempt)
     return False
+
+def save_chain_to_file(chain):
+    with open("chain.json", "w") as f:
+        json.dump(chain, f)
+
+def load_chain_from_file():
+    try:
+        with open("chain.json", "r") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return []
