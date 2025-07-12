@@ -16,7 +16,16 @@ class GenesisBlock:
         self.previous_hash = "0" * 64
         self.nonce = 0
         self.hash = self.calculate_hash()
-
+ 
+    class Block:
+    def __init__(self, index, transactions, previous_hash):
+        self.index = index
+        self.timestamp = time.time()
+        self.transactions = [tx.__dict__ for tx in transactions if tx.verify_signature()]
+        self.previous_hash = previous_hash
+        self.nonce = 0
+        self.hash = self.calculate_hash()
+    
     def calculate_hash(self):
         block_string = json.dumps({
             "index": self.index,
