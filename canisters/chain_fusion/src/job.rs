@@ -1,4 +1,4 @@
-import { createClient } from 'redis';
+import { createClient } from 'bitcoin';
 import { NextResponse } from 'next/server';
 
 const redis = await createClient().connect();
