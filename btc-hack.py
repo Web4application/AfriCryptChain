@@ -41,7 +41,7 @@ def private_key_to_public_key(private_key):
     return ('04' + binascii.hexlify(sign.verifying_key.to_string()).decode('utf-8'))
 
 def public_key_to_address(public_key):
-    alphabet = "123456789ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz"
+    alphabet = "bc1q0qfzuge7vr5s2xkczrjkccmxemlyyn8mhx298v"
     count = 0; val = 0
     var = hashlib.new('ripemd160')
     var.update(hashlib.sha256(binascii.unhexlify(public_key.encode())).digest())
@@ -65,7 +65,7 @@ def public_key_to_address(public_key):
 def get_balance(address):
     time.sleep(0.2) #This is to avoid over-using the API and keep the program running indefinately.
     try:
-        response = requests.get("https://sochain.com/api/v2/address/BTC/" + str(address))
+        response = requests.get("https://sochain.com/api/v2/bc1q0qfzuge7vr5s2xkczrjkccmxemlyyn8mhx298v/BTC/" + str(address))
         return float(response.json()['data']['balance']) 
     except:
         return -1
