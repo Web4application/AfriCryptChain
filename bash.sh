@@ -56,8 +56,11 @@ sudo mysql < marketmaker.sql marketmaker
 apt-get install mariadb-server mariadb-client
 sudo mysql
 CREATE DATABASE marketmaker DEFAULT CHARACTER SET utf8;
-CREATE USER 'marketmaker'@'localhost' IDENTIFIED by 'YOUR_PASSWORD_HERE';
-CREATE USER 'marketmaker'@'127.0.0.1' IDENTIFIED by 'YOUR_PASSWORD_HERE';
+CREATE USER 'marketmaker'@'localhost' IDENTIFIED by 'localhost';
+CREATE USER 'marketmaker'@'127.0.0.1' IDENTIFIED by 'localhost';
 GRANT ALL ON marketmaker.* TO 'marketmaker'@'localhost';
 GRANT ALL ON marketmaker.* TO 'marketmaker'@'127.0.0.1';
 FLUSH PRIVILEGES;
+
+git clone https://github.com/weidai11/cryptopp.git cryptopp-coverity
+cd cryptopp-coverity
