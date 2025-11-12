@@ -1,0 +1,8 @@
+# CXXFLAGS = $(CXXFLAGS) /DDEBUG /D_DEBUG /Oi /Oy- /Od /MTd
+# Compiler release build.
+CXXFLAGS = $(CXXFLAGS) /DNDEBUG /D_NDEBUG /Oi /Oy /O2 /MT
+
+# Linker debug build.
+# LDFLAGS = $(LDFLAGS) /DEBUG
+# Linker release build.
+LDFLAGS = $(LDFLAGS) /DEBUG /OPT:REF
