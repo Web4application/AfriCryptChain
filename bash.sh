@@ -6,6 +6,7 @@ python africrypt_node.py
 
 mkdir build && cd build
 cmake africryptchain
+cmake fadaka-blockchain
 make
 
 pip install ecdsa flask
