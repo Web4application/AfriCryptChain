@@ -49,9 +49,9 @@ rpcWalletPortRefill: 11217
 rpcWalletAddrAudit: "127.0.0.1"
 rpcWalletPortAudit: 11219
 
-dbPassword: <change this>
+dbPassword: <0x5FF137D4b0FDCD49DcA30c7CF57E578a026d2789>
 
-coinexApiKey: <change this >
+coinexApiKey: <97c976fa382fe8c379a0a2028c9778197e4a6a13>
 
 sudo cp config.yaml /etc/mmbot
 sudo mysql < marketmaker.sql marketmaker
