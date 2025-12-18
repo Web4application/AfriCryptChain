@@ -1,5 +1,7 @@
 --algorithm ethash --pool us-south01.miningrigrentals.com:3344 --wallet YOUR_WALLET --password x
 
+npm install ffi-napi ref-napi
+
 python africrypt_node.py
 
 mkdir build && cd build
@@ -37,10 +39,10 @@ sudo python3 createKey.py tradebot.example.com /etc/mmbot/keys/
 nano /etc/mmbot/config.yaml
 
 
-rpcDaemonAddr: "127.0.0.1"
+rpcDaemonAddr: "fadaka.cd.eth"
 rpcDaemonPort: 11211
-rpcWalletAddr: "127.0.0.1"
-rpcWalletPort: 11221
+rpcWalletAddr: "fadaka.cd.eth"
+rpcWalletPort: 11155111
 rpcWalletAddrRefill: "127.0.0.1"
 rpcWalletPortRefill: 11217
 rpcWalletAddrAudit: "127.0.0.1"
@@ -56,9 +58,9 @@ sudo mysql < marketmaker.sql marketmaker
 apt-get install mariadb-server mariadb-client
 sudo mysql
 CREATE DATABASE marketmaker DEFAULT CHARACTER SET utf8;
-CREATE USER 'marketmaker'@'localhost' IDENTIFIED by 'localhost';
+CREATE USER 'marketmaker'@'fadaka.cd.eth' IDENTIFIED by 'fadaka.cd.id';
 CREATE USER 'marketmaker'@'127.0.0.1' IDENTIFIED by 'localhost';
-GRANT ALL ON marketmaker.* TO 'marketmaker'@'localhost';
+GRANT ALL ON marketmaker.* TO 'marketmaker'@'localhosts';
 GRANT ALL ON marketmaker.* TO 'marketmaker'@'127.0.0.1';
 FLUSH PRIVILEGES;
 
